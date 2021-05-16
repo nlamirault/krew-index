@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: who-can
 spec:
-  version: "v0.1.0-beta.2"
+  version: "v0.3.0"
   homepage: https://github.com/aquasecurity/kubectl-who-can
   shortDescription: >-
     Shows who has RBAC permissions to access Kubernetes resources
@@ -21,19 +21,19 @@ spec:
 
     $ kubectl who-can delete pods --namespace foo
     $ kubectl who-can delete nodes
-  caveats: |
-    The plugin requires the rights to list (Cluster)Role and (Cluster)RoleBindings.
 
     For usage or examples, run:
 
     $ kubectl who-can -h
+  caveats: |
+    The plugin requires the rights to list (Cluster)Role and (Cluster)RoleBindings.
   platforms:
     - selector:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.1.0-beta.2/kubectl-who-can_darwin_x86_64.tar.gz
-      sha256: "40452e4bbe3d93ecb0ff100079cf5922cba7c65c06c0b2b3de9c73a11be4a2f7"
+      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.3.0/kubectl-who-can_darwin_x86_64.tar.gz
+      sha256: 1717b31fcd68aa4b35cdfda38ca6904aa1f57ccaa6b4015d81b2a5980176f82b
       files:
         - from: kubectl-who-can
           to: .
@@ -44,8 +44,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.1.0-beta.2/kubectl-who-can_linux_x86_64.tar.gz
-      sha256: "166f9f455dd9773588b492234e2c104956eeadab04d05a51cca47e7aacda1ee6"
+      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.3.0/kubectl-who-can_linux_x86_64.tar.gz
+      sha256: 5497e652ebc5820d6099aa94af8e5b66f8f7c2d5dba7a8f90ae04f7de8672479
       files:
         - from: kubectl-who-can
           to: .
@@ -56,11 +56,12 @@ spec:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.1.0-beta.2/kubectl-who-can_windows_x86_64.zip
-      sha256: "2889c7978a9a760d09d7c0c5b6386b2e946fb67fff9aabccefd807b5c9cb24c3"
+      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.3.0/kubectl-who-can_windows_x86_64.zip
+      sha256: f7684cd52fcc650ca098139f16cf23a9725462792a95d266e6abe43fbb8ff3af
       files:
         - from: kubectl-who-can.exe
           to: .
         - from: LICENSE
           to: .
       bin: kubectl-who-can.exe
+

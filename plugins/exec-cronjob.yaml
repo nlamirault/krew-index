@@ -3,13 +3,13 @@ kind: Plugin
 metadata:
   name: exec-cronjob
 spec:
-  version: v0.4.2
+  version: v0.6.0
   platforms:
   - selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}
-    uri: https://github.com/thecloudnatives/kubectl-plugins/archive/v0.4.2.zip
-    sha256: 4737ec20e3eac922cf8cfdc3c384a3124d3d98786277ea9152dcc085846dabbc
+    uri: https://github.com/FikaWorks/kubectl-plugins/archive/v0.6.0.zip
+    sha256: b92740c91efe7c7101c4d51fb456c08c8fc4014621cac2144a30895c257b6559
     files:
     - from: kubectl-plugins-*/exec-cronjob/*
       to: .
@@ -21,14 +21,8 @@ spec:
     Run a CronJob immediately as Job by extracting the Job spec and creating a
     Job instance thereof.
   caveats: |
-    Usage:
-        kubectl exec-cronjob <name> [options]
-
-    Options:
-        -n, --namespace='': If present, the namespace scope for this CLI request
-        --dry-run: If true, only print the object that would be sent, without sending it.
-        -h, --help: Display this help
-
-    Read the documentation at:
-      https://github.com/thecloudnatives/kubectl-plugins#exec-cronjob
-  homepage: https://github.com/thecloudnatives/kubectl-plugins#exec-cronjob
+    DEPRECATION NOTICE:
+    This plugin isn't necessary anymore, the kubectl cli let you create
+    cronjob with the create subcommand:
+        kubectl create job --from cronjob/my-cronjob my-job
+  homepage: https://github.com/FikaWorks/kubectl-plugins#exec-cronjob
